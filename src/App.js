@@ -1,25 +1,41 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import Services from './components/Services';
+import MainConcepts from './components/MainConcepts';
+import Team from './components/Team';
+import Partners from './components/Partners';
+import Contact from './components/Contact';
+import { useRef } from 'react';
 
 function App() {
+  const servicesRef = useRef(null);
+  const teamRef = useRef(null);
+  const contactRef = useRef(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header 
+        servicesRef={servicesRef} 
+        teamRef={teamRef} 
+        contactRef={contactRef}
+      />
+      <Hero contactRef={contactRef} />
+      <div ref={servicesRef}>
+        <Services />
+      </div>
+      <MainConcepts />
+      <div ref={teamRef}>
+        <Team />
+      </div>
+      <Partners />
+      <div ref={contactRef}>
+        <Contact />
+      </div>
     </div>
   );
 }
 
 export default App;
+
+
