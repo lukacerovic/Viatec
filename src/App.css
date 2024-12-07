@@ -218,7 +218,6 @@ h1 {
   
 }
 .search-form {
-  float: right;
   text-align: center;
   color: #181818;
   backdrop-filter: blur(100px);
@@ -270,6 +269,7 @@ h1 {
 
 .search-button {
   width: 90%;
+  align-self: center;
   padding: 10px;
   background-color: #6c2636;
   border: none;
